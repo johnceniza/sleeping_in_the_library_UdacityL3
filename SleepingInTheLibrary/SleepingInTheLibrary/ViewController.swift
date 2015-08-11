@@ -11,7 +11,7 @@ import UIKit
 /* 1 - Define constants */
 let BASE_URL = "https://api.flickr.com/services/rest/"
 let METHOD_NAME = "flickr.galleries.getPhotos"
-let API_KEY = "ENTER_YOUR_API_KEY_HERE"
+let API_KEY = "f218b0049a85a6a0b1c1a53f77f2a655"
 let GALLERY_ID = "5704-72157622566655097"
 let EXTRAS = "url_m"
 let DATA_FORMAT = "json"
@@ -119,4 +119,8 @@ class ViewController: UIViewController {
         
         return (!urlVars.isEmpty ? "?" : "") + join("&", urlVars)
     }
+    
+    /*
+    In a nutshell, the app requests a photo of people sleeping in a library and displays it for the user with a caption. The way this works is that we must first register for a Flickr account so that we can get an API Key (so that flickr can ID our app when we make requests). After doing so , we create a method argument and a NSURLRequest which we send to the Flickr API. Flickr will analyze our request and return what we asked for or an error if it can't find it. We then receive the object we requested and parse it so that we can pull what information we want - in this case a list of photos from the gallery. We then select one of these photos and request the image related to this photo object. If it returns without error, we display it to the user along with the photo's title.
+*/
 }
